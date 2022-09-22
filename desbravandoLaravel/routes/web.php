@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,21 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
 
-    $nome = "marilu";
-    $idade = 21;
-    $arr = [1, 2, 3, 4, 5, 6];
-
-    return view('welcome', 
-    [
-        'nome' => $nome,  
-        'idade'=> $idade, 
-        'profissao' => "cantora",
-        'arr' => $arr
-    ]);
-});
+Route::get('/', [EventController::class, 'index']);
+Route::get('/Criar/Evento', [EventController::class, 'create']);
 
 Route::get('/contatos', function () {
     return view('contact');
 });
+// "para coloca parametros opcionais basta coloca o ponto de interogação depois da variavel porem precisa definir um valor padrão"
+
