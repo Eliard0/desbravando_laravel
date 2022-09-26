@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
             <label for="title">Informe a data do evento:</label>
-            <input type="date" class="form-control" id="" name="" placeholder="informe um nome para o evento">
+            <input type="date" class="form-control" id="date" name="date" placeholder="informe um nome para o evento">
         </div>
         <div class="form-group">
             <label for="title">Evento e Privado ?</label>
@@ -34,6 +34,40 @@
                 <option value="1">Sim</option>
             </select>
         </div>
+        <div class="form-group">
+            <h4>Adicione itens ao evento:</h4>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Cadeiras" name="itens[]">
+                <label class="form-check-label">
+                    Cadeiras
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Palco" name="itens[]">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Palco
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Cerveja gratis" name="itens[]">
+                <label class="form-check-label">
+                    Cerveja gratis
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Open food" name="itens[]">
+                <label class="form-check-label">
+                    Open food
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Brindes" name="itens[]">
+                <label class="form-check-label">
+                    Brindes
+                </label>
+            </div>
+        </div>
+
         <input type="submit" class="btn btn-primary" value="Criar evento">
     </form>
 </div>

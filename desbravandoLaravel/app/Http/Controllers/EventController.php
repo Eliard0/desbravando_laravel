@@ -22,9 +22,11 @@ class EventController extends Controller
         $event = new Event;
 
         $event->title = $request->title;
+        $event->date = $request->date;
         $event->city = $request->city;
         $event->description = $request->description;
         $event->private = $request->private;
+        $event->itens = $request->itens;
 
         //imagem upload
         if($request->hasFile('image') && $request->file('image')->isValid()){
@@ -41,5 +43,13 @@ class EventController extends Controller
         $event->save();
 
         return redirect('/')->with('msg','Evento cadastrado com sucesso!');
+    }
+
+
+    public function show($id) {
+
+        $event = Event::findOrFail($id);
+
+        return view('events.show', ['event'=> $event]);
     }
 }
